@@ -28,3 +28,7 @@ elif plat == "Darwin":
 driver.get(surviv_url)
 driver.find_element_by_xpath("//*[@id='start-top-right']/div[1]/div[1]/div").click()
 driver.find_element_by_xpath("//*[@id='start-top-right']/div[1]/div[3]/div[2]/div[4]").click()
+
+"""
+hello
+"""
