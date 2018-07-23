@@ -32,6 +32,18 @@ elif plat == "Windows":
 elif plat == "Darwin":
     driver.set_window_size(mac_os_width, mac_os_height)
 
+def newGame():
+    driver.find_element_by_xpath("//*[@id='ui-stats-options']/a[1]").click()
+    driver.find_element_by_xpath("//*[@id='btn-start-solo']").click()
+
+def printStats():
+    if driver.find_element_by_xpath("//*[@id='ui-stats-info-box']/div/div[5]").text != '':
+        print(driver.find_element_by_xpath("//*[@id='ui-stats-info-box']/div/div[2]").text)
+        print(driver.find_element_by_xpath("//*[@id='ui-stats-info-box']/div/div[3]").text)
+        print(driver.find_element_by_xpath("//*[@id='ui-stats-info-box']/div/div[4]").text)
+        print(driver.find_element_by_xpath("//*[@id='ui-stats-info-box']/div/div[5]").text)
+        
+
 driver.get(surviv_url)
 
 driver.find_element_by_xpath("//*[@id='start-top-right']/div[1]/div[1]/div").click()
