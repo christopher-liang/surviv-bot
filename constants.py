@@ -1,0 +1,11 @@
+SURVIV_URL = "http://surviv.io/"
+SIZE_URL = "http://resizemybrowser.com"
+WIN_OS_WIDTH = 1296
+WIN_OS_HEIGHT = 893
+MAC_OS_WIDTH = 1280
+MAC_OS_HEIGHT = 874
+WANTED_WIDTH = 1280
+WANTED_HEIGHT = 800
+EMAIL = "liang.chris.topher.j@gmail.com"
+PASS = "B0ttH3f4Rm"
+WAIT_TIME = 600
