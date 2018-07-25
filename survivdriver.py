@@ -47,5 +47,13 @@ class SurvivDriver(webdriver.Chrome):
     start_game_from_death = functions.start_game_from_death
     game_length = functions.game_length
     game_rank = functions.game_rank
+    weapon_names = functions.weapon_names
+    current_weapon = functions.current_weapon
+    current_clip = functions.current_clip
+    current_remaining_ammo = functions.current_remaining_ammo
+    inventory = functions.inventory
+    health = functions.health
+    players_remaining = functions.players_remaining
+    kills = functions.kills
 
     

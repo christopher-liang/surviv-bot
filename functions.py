@@ -1,3 +1,5 @@
+# import re 
+
 def start_game(self):
     self.find_element_by_xpath("//*[@id='btn-start-solo']").click()
 
