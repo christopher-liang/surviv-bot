@@ -1,4 +1,5 @@
 from survivdriver import SurvivDriver
+from idle import Idle
 
 survivdriver = SurvivDriver()
-survivdriver.idle()
+Idle(survivdriver).run()

@@ -43,7 +43,6 @@ class SurvivDriver(webdriver.Chrome):
         self.find_element_by_xpath(
             "//*[@id='oauth2-authorize']/div/footer/button[2]").click()
     
-    idle = idle.idle
     start_game = functions.start_game
     start_game_from_death = functions.start_game_from_death
     game_length = functions.game_length
