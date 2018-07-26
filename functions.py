@@ -80,7 +80,29 @@ def health(self):
     #     return float(re.search(r'width:\s(\d*\.?\d*)%',self.find_element_by_xpath("//*[@id='ui-health-actual']").get_attribute("style")).group(1))
     # except:
     #     return -1
-  
+
+def adrenaline(self):
+    #return adrenaline on scale from 0-100
+    #goes through each bar, adds up the value
+    bar1 = self.find_element_by_xpath("//*[@id='ui-boost-counter']/div[1]/div").get_property("style")
+    bar2 = self.find_element_by_xpath("//*[@id='ui-boost-counter']/div[2]/div").get_property("style")
+    bar3 = self.find_element_by_xpath("//*[@id='ui-boost-counter']/div[3]/div").get_property("style")
+    bar4 = self.find_element_by_xpath("//*[@id='ui-boost-counter']/div[4]/div").get_property("style")
+
+    sum = 0
+    if (bar1 != "width: 0%;"):
+        #extracts a float of the percent up till and not including the % sign
+        sum += float(bar1[7:bar1.find("%")]) * .25
+        if (bar2 != "width: 0%;"):
+            sum += float(bar2[7:bar2.find("%")]) * .25
+            if (bar3 != "width: 0%;"):
+                #3rd bar is longer
+                sum += float(bar3[7:bar3.find("%")]) * .375
+                if (bar4 != "width: 0%;"):
+                    #4th bar is shorter
+                    sum += float(bar4[7:bar4.find("%")]) * .125
+    return sum
+
 def current_clip(self):
     return int(self.find_element_by_xpath("//*[@id='ui-current-clip'])").text)
 
