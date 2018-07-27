@@ -54,13 +54,15 @@ class Gamemode(object):
 
 			time = self.driver.game_length()
 			rank = self.driver.game_rank()
-
+			kills = self.driver.game_kills()
+			damage_dealt = self.driver.game_damage_dealt()
+			damage_taken = self.driver.game_damage_taken()
+		
 			with open(csv_file_path, 'a') as csv_file:
 				writer = csv.writer(csv_file, delimiter=',')
-				writer.writerow([time, rank])
+				writer.writerow([time, rank, kills, damage_dealt, damage_taken])
 
-			print(str(time) + ", " + str(rank))
-
+			self.driver.print_stats()
 			self.driver.start_game_from_death()
 	def process_screen(self, screen):
 		pass

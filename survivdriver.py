@@ -30,23 +30,29 @@ class SurvivDriver(webdriver.Chrome):
 
         self.get(constants.SURVIV_URL)
 
-        self.find_element_by_xpath(
-            "//*[@id='start-top-right']/div[1]/div[1]/div").click()
-        self.find_element_by_xpath(
-            "//*[@id='start-top-right']/div[1]/div[3]/div[2]/div[4]").click()
-        self.find_element_by_xpath(
-            "//*[@id='app-mount']/div[1]/div/div[2]/div/form/div/div[3]/div[1]/div/input").send_keys(constants.EMAIL)
-        self.find_element_by_xpath(
-            "//*[@id='app-mount']/div[1]/div/div[2]/div/form/div/div[3]/div[2]/div/input").send_keys(constants.PASS)
-        self.find_element_by_xpath(
-            "//*[@id='app-mount']/div[1]/div/div[2]/div/form/div/div[3]/button[2]").click()
-        self.find_element_by_xpath(
-            "//*[@id='oauth2-authorize']/div/footer/button[2]").click()
+        # self.find_element_by_xpath(
+        #     "//*[@id='start-top-right']/div[1]/div[1]/div").click()
+        # self.find_element_by_xpath(
+        #     "//*[@id='start-top-right']/div[1]/div[3]/div[2]/div[4]").click()
+        # self.find_element_by_xpath(
+        #     "//*[@id='app-mount']/div[1]/div/div[2]/div/form/div/div[3]/div[1]/div/input").send_keys(constants.EMAIL)
+        # self.find_element_by_xpath(
+        #     "//*[@id='app-mount']/div[1]/div/div[2]/div/form/div/div[3]/div[2]/div/input").send_keys(constants.PASS)
+        # self.find_element_by_xpath(
+        #     "//*[@id='app-mount']/div[1]/div/div[2]/div/form/div/div[3]/button[2]").click()
+        # self.find_element_by_xpath(
+        #     "//*[@id='oauth2-authorize']/div/footer/button[2]").click()
     
     start_game = functions.start_game
     start_game_from_death = functions.start_game_from_death
     game_length = functions.game_length
     game_rank = functions.game_rank
+    game_kills = functions.game_kills
+    game_damage_dealt = functions.game_damage_dealt
+    game_damage_taken = functions.game_damage_taken
+    game_length = functions.game_length
+    game_rank = functions.game_rank
+    print_stats = functions.print_stats
     weapon_names = functions.weapon_names
     current_weapon = functions.current_weapon
     current_clip = functions.current_clip

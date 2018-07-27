@@ -8,18 +8,15 @@ def start_game_from_death(self):
     self.find_element_by_xpath("//*[@id='ui-stats-options']/a[1]").click()
     self.find_element_by_xpath("//*[@id='btn-start-solo']").click()
 
-
-def print_stats(self):
-    if self.find_element_by_xpath("//*[@id='ui-stats-info-box']/div/div[5]").text != '':
-        print(self.find_element_by_xpath(
-            "//*[@id='ui-stats-info-box']/div/div[2]").text)
-        print(self.find_element_by_xpath(
-            "//*[@id='ui-stats-info-box']/div/div[3]").text)
-        print(self.find_element_by_xpath(
-            "//*[@id='ui-stats-info-box']/div/div[4]").text)
-        print(self.find_element_by_xpath(
-            "//*[@id='ui-stats-info-box']/div/div[5]").text)
-
+def game_kills(self):
+    return self.find_element_by_xpath(
+            "//*[@id='ui-stats-info-box']/div/div[2]/div[2]").text
+def game_damage_dealt(self):
+    return self.find_element_by_xpath(
+            "//*[@id='ui-stats-info-box']/div/div[3]/div[2]").text
+def game_damage_taken(self):
+    return self.find_element_by_xpath(
+            "//*[@id='ui-stats-info-box']/div/div[4]/div[2]").text
 
 def game_rank(self):
     rank = self.find_element_by_xpath(
@@ -36,6 +33,21 @@ def game_length(self):
         return(int(time[0:len(time)-1]))
     else:
         return(int(time[0:minutePos])*60+int(time[minutePos+2:len(time)-1]))
+
+def print_stats(self):
+    #print stats with labels
+    if self.find_element_by_xpath("//*[@id='ui-stats-info-box']/div/div[5]").text != '':
+        print("Rank")
+        print(game_rank(self))
+        print(self.find_element_by_xpath(
+            "//*[@id='ui-stats-info-box']/div/div[2]").text)
+        print(self.find_element_by_xpath(
+            "//*[@id='ui-stats-info-box']/div/div[3]").text)
+        print(self.find_element_by_xpath(
+            "//*[@id='ui-stats-info-box']/div/div[4]").text)
+        print(self.find_element_by_xpath(
+            "//*[@id='ui-stats-info-box']/div/div[5]").text)
+
 
 def weapon_names(self):
     #list of weapon names, [slot1,slot2,Fists,grenade name]
